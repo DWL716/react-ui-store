@@ -3,6 +3,7 @@ import React from 'react';
 import Button, {ButtonType, ButtonSize} from './components/Button/button'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
+import SubMenu from './components/Menu/subMenu';
 
 function App() {
   return (
@@ -20,19 +21,30 @@ function App() {
         <Button btnType={ButtonType.Link} size={ButtonSize.Small} disabled href='https://www.baidu.com'>click</Button>
         <Button btnType={ButtonType.Default} size={ButtonSize.Large}>Hello</Button>
         <br/>
-        <Menu defaultIndex={3} mode='vertical' onSelect={(index) => {}}>
-          <MenuItem index={0}>
+        <Menu defaultIndex={'4-1'} mode='vertical' onSelect={(index) => {console.log(index)}} defaultOpenSubMenus={['4']}>
+          <MenuItem>
             cool link 1
           </MenuItem>
-          <MenuItem index={1}>
+          <MenuItem>
             cool link 2
           </MenuItem>
-          <MenuItem index={2} disabled>
+          <MenuItem disabled>
             cool link 2
           </MenuItem>
-          <MenuItem index={3}>
+          <MenuItem>
             link 2
           </MenuItem>
+          <SubMenu title='title'>
+            <MenuItem>
+              dropdown 1
+            </MenuItem>
+            <MenuItem>
+              dropdown 2
+            </MenuItem>
+            <MenuItem>
+              dropdown 3
+            </MenuItem>
+          </SubMenu>
         </Menu>
       </header>
     </div>
