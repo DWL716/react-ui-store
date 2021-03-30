@@ -36,6 +36,7 @@ const Menu: React.FC<MenuProps> = (props) => {
       onSelect(index)
     }
   }
+  // 需要共享的参数
   const passedContext: IMenuContext = {
     index: currentActive ? currentActive : '0',
     onSelect: handleClick,
@@ -46,8 +47,10 @@ const Menu: React.FC<MenuProps> = (props) => {
   const renderChildren = () => {
     return React.Children.map(children, (child, index) => {
       const childElement = child as React.FunctionComponentElement<MenuItemProps>
+      // 判断子元素是否是 MenuItem | SubMenu 如果是 直接返回
       const { displayName } = childElement.type
       if(displayName === 'MenuItem' || displayName === 'SubMenu') {
+        // 克隆 元素
         return React.cloneElement(childElement, {
           index: index.toString()
         })

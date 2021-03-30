@@ -2,4 +2,5 @@
 // allows you to do things like:
 // expect(element).toHaveTextContent(/react/i)
 // learn more: https://github.com/testing-library/jest-dom
+// jest dom 的扩展
 import '@testing-library/jest-dom';

@@ -19,7 +19,7 @@
     cursor: not-allowed;
     opacity: $btn-disabled-opacity;
     box-shadow: none;
-    > * {
+    > * { // > * 为通配符 该级下的子元素
       pointer-events: none;
     }
   }

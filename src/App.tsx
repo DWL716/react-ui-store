@@ -21,7 +21,7 @@ function App() {
         <Button btnType={ButtonType.Link} size={ButtonSize.Small} disabled href='https://www.baidu.com'>click</Button>
         <Button btnType={ButtonType.Default} size={ButtonSize.Large}>Hello</Button>
         <br/>
-        <Menu defaultIndex={'4-1'} mode='vertical' onSelect={(index) => {console.log(index)}} defaultOpenSubMenus={['4']}>
+        <Menu defaultIndex={'4-1'} mode='horizontal' onSelect={(index) => {console.log(index)}} defaultOpenSubMenus={['4']}>
           <MenuItem>
             cool link 1
           </MenuItem>

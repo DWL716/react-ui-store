@@ -1,11 +1,13 @@
 import React from 'react';
 import classNames from 'classnames';
 
+// 定义 size 枚举
 export enum ButtonSize {
   Large = 'lg',
   Small = 'sm'
 }
 
+// 定义 button 的type 枚举
 export enum ButtonType {
   Primary = 'primary',
   Default = 'default',

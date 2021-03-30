@@ -1,3 +1,6 @@
+// 中性色 
+// 后面的 !default 是 sass 提供的一个配置
+// 即如果自己定义样式则用自己，否是就默认
 $white:    #fff !default;
 $gray-100: #f8f9fa !default;
 $gray-200: #e9ecef !default;
@@ -10,6 +13,7 @@ $gray-800: #343a40 !default;
 $gray-900: #212529 !default;
 $black:    #000 !default;
 
+// 基础色
 $blue:    #0d6efd !default;
 $indigo:  #6610f2 !default;
 $purple:  #6f42c1 !default;
@@ -21,6 +25,7 @@ $green:   #52c41a !default;
 $teal:    #20c997 !default;
 $cyan:    #17a2b8 !default;
 
+// 系统色
 $primary:       $blue !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
