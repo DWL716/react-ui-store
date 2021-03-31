@@ -61,6 +61,7 @@ const SubMenu: React.FC<SubMenuProps> = (props) => {
         console.error('Warning: Menu has a child which is not a MenuItem component')
       }
     })
+    // 添加动画效果
     return (
       <Transition
         in={menuOpen}
