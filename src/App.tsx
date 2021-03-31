@@ -1,10 +1,14 @@
 import React from 'react';
+import { library } from '@fortawesome/fontawesome-svg-core'
 
 import Button, {ButtonType, ButtonSize} from './components/Button/button'
 import Menu from './components/Menu/menu'
 import MenuItem from './components/Menu/menuItem'
 import SubMenu from './components/Menu/subMenu';
+import Icon from './components/Icon/icon'
+import { faCoffee, fas } from '@fortawesome/free-solid-svg-icons'
 
+library.add(fas)
 function App() {
   return (
     <div className="App">
@@ -46,6 +50,8 @@ function App() {
             </MenuItem>
           </SubMenu>
         </Menu>
+        <br/>
+        <Icon icon={faCoffee} theme="danger" size="10x"></Icon>
       </header>
     </div>
   );

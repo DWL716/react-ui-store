@@ -50,7 +50,7 @@ const createStyleFIle = () => {
   return style
 }
 let wrapper: RenderResult, menuElement: HTMLElement, activeElement: HTMLElement, disabledElement: HTMLElement;
-describe('test Menu and MenuItem component', () => {
+describe('测试 Menu 和 MenuItem 组件', () => {
   beforeEach(() => {
     wrapper = render(generateMenu(testProps))
     // 将 createStyleFIle 插入到节点中
@@ -59,9 +59,10 @@ describe('test Menu and MenuItem component', () => {
     activeElement = wrapper.getByText('active')
     disabledElement = wrapper.getByText('disabled')
   })
-  it('should render correct Menu and MenuItem based on default props', () => {
+  it('测试默认的组件时候是否会正常显示默认属性', () => {
     expect(menuElement).toBeInTheDocument()
     expect(menuElement).toHaveClass('viking-menu test')
+    // 判断 menu 元素内存在多少个 li 元素
     expect(menuElement.getElementsByTagName('li').length).toEqual(5)
     expect(menuElement.querySelectorAll(":scope > li").length).toEqual(4)
     expect(activeElement).toHaveClass('menu-item is-active')
@@ -82,9 +83,9 @@ describe('test Menu and MenuItem component', () => {
     expect(disabledElement).not.toHaveClass('is-active')
     expect(testProps.onSelect).not.toHaveBeenCalledWith('1')
   })
-  it('should render vertical mode when mode is set to vertical', () => {
+  it('当模式设置为垂直模式时，是否应该渲染垂直模式', () => {
     // 测试 mode 是 横向布局还是纵向布局
-    cleanup()
+    cleanup() // 清除之前渲染留下来的dom
     const wrapper = render(generateMenu(testVerProps))
     const menuElement = wrapper.getByTestId('test-menu')
     expect(menuElement).toHaveClass('menu-vertical')

@@ -1,0 +1,6 @@
+// 循环添加样式
+@each $key, $value in $theme-colors {
+  .icon-#{$key} {
+    color: $value;
+  }
+}
