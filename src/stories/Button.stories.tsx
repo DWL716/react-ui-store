@@ -2,6 +2,7 @@ import React from 'react';
 import { Story, Meta } from '@storybook/react';
 
 import { Button, ButtonProps } from './Button';
+import MyButton, {ButtonType, ButtonSize}  from '../components/Button/button'
 
 export default {
   title: 'Example/Button',
@@ -35,3 +36,6 @@ Small.args = {
   size: 'small',
   label: 'Button',
 };
+
+const Templates: React.FC<ButtonProps> = (props) => <MyButton btnType={ButtonType.Danger}>测试</MyButton>;
+export const Prm = Templates.bind({})
