@@ -1,15 +1,14 @@
 import React from 'react'
-import { storiesOf } from '@storybook/react'
+import { Story, Meta, storiesOf } from '@storybook/react';
 import { action } from '@storybook/addon-actions'
 
+import Button, { ButtonType, ButtonSize, ButtonProps } from './button'
 
-import Button, {ButtonType, ButtonSize} from './button'
-
-const styles: React.CSSProperties = {
-  textAlign: "center"
-}
+// const styles: React.CSSProperties = {
+//   textAlign: "center"
+// }
 // 使组件居中
-const CenterDecorator = (storyFn: any) => (<div style={styles}>{storyFn()}</div>)
+// const CenterDecorator = (storyFn: any) => (<div style={styles}>{storyFn()}</div>)
 
 const defaultButton = () => (
   <Button onClick={action('clicked')}> default button </Button>
@@ -30,7 +29,30 @@ const buttonWithType = () => (
   </>
 )
 storiesOf('Button Component', module)
-  .addDecorator(CenterDecorator)
   .add('Button', defaultButton)
   .add('不同尺寸的 Button', buttonWithSize)
   .add('不同类型的 Button', buttonWithType)
+
+
+
+const Template: Story<ButtonProps> = (args) => <Button {...args} >默认</Button>;
+export const Primary = Template.bind({});
+Primary.args = {
+  btnType: ButtonType.Default,
+  size: ButtonSize.Large
+};
+
+export default {
+  title: 'Example/Buttons',
+  component: Button,
+  argTypes: {
+    btnType: {
+      type: 'radio',
+      options: ButtonType
+    },
+    size: {
+      type: 'radio',
+      options: ButtonSize
+    }
+  },
+} as Meta;

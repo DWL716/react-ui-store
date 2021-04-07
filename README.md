@@ -21,3 +21,9 @@ styles/
 yarn add node-sass --save
 node-sass版本 4.13.0 
 如果为5.0.0版本会报错
+
+安装 storybook
+npx -p @storybook/cli sb init
+yarn add @types/storybook__addon-info --save
+自动生成文档
+yarn add react-docgen-typescript-loader -D

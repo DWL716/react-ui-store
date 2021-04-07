@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ButtonHTMLAttributes, AnchorHTMLAttributes } from 'react';
 import classNames from 'classnames';
 
 // 定义 size 枚举
@@ -16,19 +16,34 @@ export enum ButtonType {
 }
 
 interface BaseButtonProps {
+  /**
+   * 添加 自定义的 className
+   */
   className?: string;
+  /**
+   * Button 是否可被点击的状态
+   */
   disabled?: boolean;
+  /**
+   * Button 的大小
+   */
   size?: ButtonSize;
+  /**
+   * Button 类型 
+   */
   btnType?: ButtonType;
+  /**
+   * a 链接的地址 href
+   */
   href?: string;
   children: React.ReactNode
 }
 
-type NativeButtonProps = BaseButtonProps & React.ButtonHTMLAttributes<HTMLElement>
-type AnchorButtonProps = BaseButtonProps & React.AnchorHTMLAttributes<HTMLElement>
+type NativeButtonProps = BaseButtonProps & ButtonHTMLAttributes<HTMLElement>
+type AnchorButtonProps = BaseButtonProps & AnchorHTMLAttributes<HTMLElement>
 export type ButtonProps = Partial<NativeButtonProps & AnchorButtonProps>
 
-const Button: React.FC<ButtonProps> = (props) => {
+export const Button: React.FC<ButtonProps> = (props) => {
   const {
     btnType,
     disabled,
