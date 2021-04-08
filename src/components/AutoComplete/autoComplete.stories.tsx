@@ -3,8 +3,10 @@ import { storiesOf, Meta, Story } from '@storybook/react'
 import Icon from '../Icon/icon'
 import { FontAwesomeIcon, FontAwesomeIconProps } from '@fortawesome/react-fontawesome'
 import { action } from '@storybook/addon-actions'
-import { faCoffee, fas, faSpinner } from '@fortawesome/free-solid-svg-icons'
+import { library } from '@fortawesome/fontawesome-svg-core'; // 导入图标仓库
+import { fas, faSpinner } from '@fortawesome/free-solid-svg-icons'
 import { AutoComplete, AutoCompleteProps } from './autoComplete'
+library.add(fas) // 需要重新再次添加把图标添加进仓库
 interface LakerPlayerProps {
   value: string;
   number: number;
@@ -84,8 +86,10 @@ const Template: Story<AutoCompleteProps> = (args) => {
         return items.slice(0, 10).map((item: any) => ({ value: item.login, ...item }))
       })
   }
-  return (<><FontAwesomeIcon icon="spinner" spin /><FontAwesomeIcon icon={['fab', 'google']} />
+  return (<><FontAwesomeIcon icon="spinner" spin />
   <Icon icon={faSpinner} spin></Icon>
+  <Icon icon='arrow-down' size='9x' theme='primary' />
+  < FontAwesomeIcon icon="stroopwafel"/>
   <AutoComplete  fetchSuggestions={handleFetch} onSelect= {(item) => {console.log(item);}}/></>)
 }
 export const Primary = Template.bind({});

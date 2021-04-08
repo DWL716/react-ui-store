@@ -126,7 +126,7 @@ export const AutoComplete: FC<AutoCompleteProps> = (props) => {
         <ul className="viking-suggestion-list">
           { loading &&
             <div className="suggstions-loading-icon">
-              <Icon icon={faSpinner} spin></Icon>
+              <Icon icon="spinner" spin></Icon>
             </div>
           }
           {suggestions.map((item, index) => {
