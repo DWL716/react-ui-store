@@ -64,20 +64,29 @@ npm run publish
 
 # npm link 的知识点
 npm link 是将当前项目通过拷贝一个项目副本到全局的node_modules 中
-然后在另一个文件夹通过 npm link 创建的项目文件名称 就可以通过拷贝到这个项目中了
+然后通过 npm link 创建的项目文件名称 就可以通过在项目中引入该包了
+具体可以看看 npm link 的作用
 例
 ```
 npm link 
--- /usr/local/lib/node_modules/ts-my-app -> /Users/dengwenlong/Desktop/前端练习总/React总/React-UI-TS/react_ui_store
+-- /usr/local/lib/node_modules/ts-my-app -> /Users/xxx/Desktop/前端练习总/React总/React-UI-TS/react_ui_store
 
 上面的 /usr/local/lib/node_modules/ts-my-app 地址就是通过 npm link 来创建全局的软链接地址指向到原有的地址上的
 
 然后在通过创建新的文件夹 cd 到该文件夹 再通过 npm link ts-my-app(创建的link项目是ts-my-app)
+镜像的名称根据package.json 的 name
 然后就会生成克隆的地址
-/Users/dengwenlong/node_modules/ts-my-app -> /usr/local/lib/node_modules/ts-my-app -> /Users/dengwenlong/Desktop/前端练习总/React总/React-UI-TS/react_ui_store
+/Users/dengwenlong/node_modules/ts-my-app -> /usr/local/lib/node_modules/ts-my-app -> /Users/xxx/Desktop/前端练习总/React总/React-UI-TS/react_ui_store
 
 ```
 
 ### 如果项目中使用该组件发生两个版本(react Hook)冲突时候
 使用 npm link ../项目名/node_modules/react
 参考：https://zh-hans.reactjs.org/warnings/invalid-hook-call-warning.html
+
+## 解决 react 版本冲突的问题
+如果 某个react项目需要引入该组件项目，但该组件的react版本和项目中的react版本不同则会出现提示
+"peerDependencies": {
+  "react": ">=16.8.0",
+  "react-dom": ">=16.8.0"
+},

@@ -12,7 +12,7 @@
     "UI",
     "React"
   ],
-  "homepage": "http://vikingship.xyz",
+  "homepage": "https://github.com/DWL716",
   "repository": {
     "type": "git",
     "url": "https://github.com/DWL716/react-ui-store"
@@ -24,23 +24,12 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.35",
     "@fortawesome/free-solid-svg-icons": "^5.15.3",
     "@fortawesome/react-fontawesome": "^0.1.14",
-    "@testing-library/jest-dom": "^5.11.4",
-    "@testing-library/react": "^11.1.0",
-    "@testing-library/user-event": "^12.1.10",
-    "@types/jest": "^26.0.15",
-    "@types/node": "^12.0.0",
-    "@types/react": "^16.9.53",
-    "@types/react-dom": "^16.9.8",
-    "@types/react-transition-group": "^4.4.1",
-    "@types/storybook__addon-info": "^5.2.3",
     "axios": "^0.21.1",
-    "babel-loader": "^8.1.0",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-scripts": "4.0.1",
-    "react-transition-group": "^4.4.1",
-    "typescript": "^4.0.3",
-    "web-vitals": "^0.2.4"
+    "react-transition-group": "^4.4.1"
+  },
+  "peerDependencies": {
+    "react": ">=16.8.0",
+    "react-dom": ">=16.8.0"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -95,6 +84,21 @@
     "node-sass": "4.13.0",
     "react-docgen-typescript-loader": "^3.7.2",
     "rimraf": "^3.0.2",
-    "webpack": "^4.44.2"
+    "webpack": "^4.44.2",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1",
+    "@testing-library/jest-dom": "^5.11.4",
+    "@testing-library/react": "^11.1.0",
+    "@testing-library/user-event": "^12.1.10",
+    "@types/jest": "^26.0.15",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.53",
+    "@types/react-dom": "^16.9.8",
+    "@types/react-transition-group": "^4.4.1",
+    "@types/storybook__addon-info": "^5.2.3",
+    "babel-loader": "^8.1.0",
+    "typescript": "^4.0.3",
+    "web-vitals": "^0.2.4"
   }
 }
