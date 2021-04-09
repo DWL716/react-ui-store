@@ -3,6 +3,7 @@ import React from 'react'
 import {storiesOf} from '@storybook/react'
 import {action} from '@storybook/addon-actions'
 import Upload, {UploadFile} from './upload'
+import Icon from '../Icon/icon'
 
 // 上传文件列表信息及状态
 const defaultFileList: UploadFile[] = [
@@ -52,9 +53,36 @@ const SimpleUpload4 = () => {
       defaultFileList={defaultFileList} />
   )
 }
+const SimpleUpload5 = () => {
+  return (
+    <Upload action="https://jsonplaceholder.typicode.com/posts" 
+      onRemove={action('remove')}
+      name="fileName"
+      multiple
+      defaultFileList={defaultFileList} />
+  )
+}
+const SimpleUpload6 = () => {
+  return (
+    <Upload
+      action="https://www.mocky.io/v2/5cc8019d300000980a055e76"
+      onChange={action('changed')}
+      onRemove={action('removed')}
+      name="fileName"
+      multiple
+      drag
+    >
+      <Icon icon="upload" size="5x" theme="secondary" />
+      <br/>
+      <p>Drag file over to upload</p>
+    </Upload>
+  )
+}
 
 storiesOf("上传组件", module)
   .add('Upload1', SimpleUpload1)
   .add("Upload2", SimpleUpload2)
   .add("Upload3", SimpleUpload3)
   .add("Upload4", SimpleUpload4)
+  .add("Upload5", SimpleUpload5)
+  .add('Upload6', SimpleUpload6)
