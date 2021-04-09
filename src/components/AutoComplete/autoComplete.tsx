@@ -2,7 +2,7 @@ import React, { FC, useState, ChangeEvent, KeyboardEvent, ReactElement, useEffec
 import classNames from 'classnames'
 import Input, { InputProps } from '../Input/input'
 import Icon from '../Icon/icon'
-import { faSpinner } from '@fortawesome/free-solid-svg-icons'
+// import { faSpinner } from '@fortawesome/free-solid-svg-icons'
 import Transition from '../Transition/transition'
 import useDebounce from '../../hooks/useDebounce'
 import useClickOutside from '../../hooks/useClickOutside'
