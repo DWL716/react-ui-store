@@ -1,6 +1,6 @@
 {
   "name": "react_ui_store",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "React components library",
   "main": "dist/index.js",
   "module": "dist/index.js",
@@ -12,7 +12,7 @@
     "UI",
     "React"
   ],
-  "homepage": "https://github.com/DWL716",
+  "homepage": "https://dwl716.github.io/storybook-static/index.html?path=/story",
   "repository": {
     "type": "git",
     "url": "https://github.com/DWL716/react-ui-store"

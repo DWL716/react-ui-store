@@ -84,9 +84,14 @@ npm link
 使用 npm link ../项目名/node_modules/react
 参考：https://zh-hans.reactjs.org/warnings/invalid-hook-call-warning.html
 
+http://vikingship.xyz/?path=/story/
+https://dwl716.github.io/storybook-static/index.html?path=/story
 ## 解决 react 版本冲突的问题
 如果 某个react项目需要引入该组件项目，但该组件的react版本和项目中的react版本不同则会出现提示
 "peerDependencies": {
   "react": ">=16.8.0",
   "react-dom": ">=16.8.0"
 },
+
+发布npm
+npm publish 
